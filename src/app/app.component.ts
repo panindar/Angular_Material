@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'material-demo';
-}
+  opened = false;
+
+  logChange(select) {
+    console.log(select)
+  }
+} 

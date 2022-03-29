@@ -1,0 +1,29 @@
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+    <button mat-menu-item [matMenuTriggerFor]="subMenu"> frontend </button>
+    <button mat-menu-item [matMenuTriggerFor]="subMenu1"> Backend </button>
+  </mat-menu>
+  <button mat-flat-button class="center" [matMenuTriggerFor]="appMenu"> Menu </button>
+  
+  
+  <mat-menu #subMenu="matMenu">
+    <button mat-menu-item> angular </button>
+    <button mat-menu-item> React </button>
+    <button mat-menu-item> Vue </button>
+  </mat-menu>
+  
+  <mat-menu #subMenu1="matMenu">
+    <button mat-menu-item> node </button>
+    <button mat-menu-item> Next </button>
+    <button mat-menu-item> php </button>
+  </mat-menu>
+  
+  <mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item> Settings </button>
+    <button mat-menu-item> Hobby is {{hobby}} </button>
+    <button mat-menu-item> Logout {{name}} </button>
+  </ng-template>
+  </mat-menu>
+  
+  <button mat-raised-button [matMenuTriggerData]="{name: 'panindar', hobby: 'cricket'}" [matMenuTriggerFor]="lazyMenu"> Vishwam Corp</button>
+  <button mat-raised-button [matMenuTriggerData]="{name:'shravan', hobby: 'teaching'}" [matMenuTriggerFor]="lazyMenu"> Code evolution</button>
